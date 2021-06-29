@@ -160,7 +160,7 @@ Resources:
   DockerManager1:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-04d29b6f966df1537
+      ImageId: ami-0ab4d1e9cf9a1215a 
       InstanceType: t2.medium
       KeyName: !Ref KeyPairName
       IamInstanceProfile: !Ref EC2ConnectProfile
@@ -216,7 +216,7 @@ Resources:
         - Key: Name
           Value: !Sub Docker Manager 2nd of ${AWS::StackName}
         - Key: project
-          Value: "202"
+          Value: "205"
   DockerManager3:
     Type: AWS::EC2::Instance
     DependsOn:
@@ -231,7 +231,7 @@ Resources:
         - Key: Name
           Value: !Sub Docker Manager 3rd of ${AWS::StackName}
         - Key: project
-          Value: "202"
+          Value: "205"
   DockerWorker1:
     Type: AWS::EC2::Instance
     DependsOn:
@@ -246,7 +246,7 @@ Resources:
         - Key: Name
           Value: !Sub Docker Worker 1st of ${AWS::StackName}
         - Key: project
-          Value: "202"
+          Value: "205"
   DockerWorker2:
     Type: AWS::EC2::Instance
     DependsOn:
