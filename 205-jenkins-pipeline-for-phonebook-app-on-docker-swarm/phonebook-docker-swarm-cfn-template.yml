@@ -261,7 +261,7 @@ Resources:
         - Key: Name
           Value: !Sub Docker Worker 2nd of ${AWS::StackName}
         - Key: project
-          Value: "202" 
+          Value: "205" 
 Outputs:
   1stDockerManagerDashboard:
     Description: Dashboard for Docker Swarm
