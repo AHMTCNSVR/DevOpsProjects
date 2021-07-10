@@ -1,0 +1,32 @@
+apiVersion: apps/v1         
+kind: Deployment
+metadata:
+  name: phonebook-app-deploy
+  labels:
+    name: phonebook-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phonebook-app-pod
+  template:
+    metadata:
+      name: phonebook-app-pod
+      labels:
+        app: phonebook-app-pod
+    spec:
+      containers:
+      - name: phonbook-app
+        image: serkangumus06/phonebook-main
+        ports:
+        - containerPort: 80
+        env:
+        - name: MYSQL_PASSWORD
+          valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: mysql-admin-password
+        envFrom: 
+          - configMapRef:
+              name: servers-configmap
+
